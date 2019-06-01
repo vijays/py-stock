@@ -19,3 +19,7 @@ df = pd.read_csv('tesla.csv', parse_dates=True, index_col=0)
 
 # print first 10 records
 print(df.head(10))
+
+# plot graph
+df.plot()
+plt.show
