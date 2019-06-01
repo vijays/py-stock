@@ -1,4 +1,4 @@
-import datetime as dt
+import datetim as dt
 import matplotlib.pyplot as plt
 from matplotlib import style
 import pandas as pd
@@ -12,6 +12,10 @@ end=dt.datetime(2018,12,31)
 
 # get data for defined date range
 df=web.DataReader('TSLA','yahoo',start,end)
+
+# CSV export and import
+df.to_csv('tesla.csv')
+df = pd.read_csv('tesla.csv', parse_dates=True, index_col=0)
 
 # print first 10 records
 print(df.head(10))
