@@ -10,6 +10,7 @@ style.use('ggplot')
 start=dt.datetime(2018,1,1)
 end=dt.datetime(2018,12,31)
 
+# df is short for data frame
 # get data for defined date range
 df=web.DataReader('TSLA','yahoo',start,end)
 
