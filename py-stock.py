@@ -17,6 +17,10 @@ df=web.DataReader('TSLA','yahoo',start,end)
 df.to_csv('tesla.csv')
 df = pd.read_csv('tesla.csv', parse_dates=True, index_col=0)
 
+# 100 Moving Average
+df['100ma'] = df['Adj Close'].rolling(window=100).mean()
+df.dropna(inplace=True)
+
 # print first 10 records
 print(df.head(10))
 
